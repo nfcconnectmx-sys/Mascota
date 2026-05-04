@@ -3,67 +3,380 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>⭐ k5 - Kid Tag MX</title>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;900&display=swap" rel="stylesheet">
+<title>🐾 Activar Pet Tag MX</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}:root{--sky:#4FC3F7;--blue:#1976D2;--sunny:#FFD600;--coral:#FF5252;--dark:#0D1B2A;--mid:#37547A;--shadow:rgba(13,27,42,0.13)}body{background:#EAF4FB;font-family:'Nunito',sans-serif;min-height:100vh;max-width:420px;margin:0 auto;overflow-x:hidden}.hero{background:linear-gradient(160deg,#1565C0 0%,#1976D2 40%,#42A5F5 80%,#4FC3F7 100%);padding:0 0 70px;position:relative;overflow:hidden}.hero::before{content:'⭐';position:absolute;font-size:200px;opacity:.07;top:-30px;right:-40px;transform:rotate(-20deg)}.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:40px;background:#EAF4FB;border-radius:40px 40px 0 0}.hero-top{display:flex;align-items:center;justify-content:space-between;padding:20px 24px 0}.tag-logo{font-family:'Fredoka One',cursive;font-size:15px;color:rgba(255,255,255,.9);letter-spacing:1px}.hero-badge{background:#FFD600;color:#0D1B2A;font-size:10px;font-weight:900;padding:4px 10px;border-radius:20px;letter-spacing:1px}.avatar-wrap{display:flex;flex-direction:column;align-items:center;padding-top:24px;gap:14px;position:relative;z-index:1}.avatar-card{width:150px;height:150px;border-radius:50%;background:white;padding:6px;box-shadow:0 8px 32px rgba(0,0,0,.25),0 0 0 4px rgba(255,214,0,.6);animation:flotar 3s ease-in-out infinite;display:flex;align-items:center;justify-content:center}@keyframes flotar{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-7px) rotate(1deg)}}.avatar-svg{width:128px;height:128px;border-radius:50%}.kid-name{font-family:'Fredoka One',cursive;font-size:42px;color:white;text-shadow:0 3px 14px rgba(0,0,0,.2);line-height:1;letter-spacing:1px}.kid-sub{font-size:14px;color:rgba(255,255,255,.92);font-weight:700;letter-spacing:1px;margin-top:-6px}.mensaje-hero{background:#FFD600;border-radius:16px;padding:12px 18px;margin:0 18px;text-align:center;font-size:14px;font-weight:900;color:#0D1B2A;line-height:1.5;box-shadow:0 4px 16px rgba(255,214,0,.35);position:relative;z-index:2;margin-top:-10px}.content{padding:14px 18px 32px;display:flex;flex-direction:column;gap:14px}.card{background:white;border-radius:20px;padding:20px;box-shadow:0 4px 20px var(--shadow)}.card-title{font-family:'Fredoka One',cursive;font-size:14px;font-weight:900;letter-spacing:1px;color:var(--blue);text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:6px}.card-title::after{content:'';flex:1;height:1.5px;background:#DDEEFF}.info-row{display:flex;align-items:center;gap:12px;padding:8px 0;border-bottom:1px solid #EAF4FB}.info-row:last-child{border-bottom:none}.info-icon{width:38px;height:38px;border-radius:12px;background:#EAF4FB;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}.info-label{font-size:11px;color:#7A9EC0;font-weight:700;letter-spacing:.5px}.info-value{font-size:15px;color:var(--dark);font-weight:700}.btn-whatsapp{display:flex;align-items:center;justify-content:center;gap:10px;background:#25D366;color:white;font-family:'Fredoka One',cursive;font-size:17px;padding:17px;border-radius:16px;text-decoration:none;box-shadow:0 4px 16px rgba(37,211,102,.38)}.btn-llamar{display:flex;align-items:center;justify-content:center;gap:10px;background:#FF5252;color:white;font-family:'Fredoka One',cursive;font-size:17px;padding:17px;border-radius:16px;text-decoration:none;box-shadow:0 4px 16px rgba(255,82,82,.35);margin-top:10px}.btn-llamar2{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--blue);color:white;font-family:'Fredoka One',cursive;font-size:17px;padding:17px;border-radius:16px;text-decoration:none;box-shadow:0 4px 16px rgba(25,118,210,.35);margin-top:10px}.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}.chip{background:#EAF4FB;border:1.5px solid #B3D9F5;color:var(--mid);font-size:12px;font-weight:700;padding:5px 12px;border-radius:20px}.chip.alert{background:#FFF0F0;border-color:#FFB8B8;color:#D93025}.chip.ok{background:#F0FFF4;border-color:#A8E6BA;color:#1A7F37}.chip.info{background:#FFF8E1;border-color:#FFE082;color:#E65100}.nota-box{background:#EAF4FB;border-left:4px solid #4FC3F7;border-radius:0 12px 12px 0;padding:12px 14px;font-size:13px;color:var(--mid);font-weight:600;margin-top:10px;line-height:1.5}.footer{text-align:center;padding:10px 0 28px;font-size:11px;color:#7A9EC0;font-weight:700;letter-spacing:1px}.footer span{color:var(--blue)}
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --cream: #FFF8F0; --warm: #FF6B35; --soft: #FFB347;
+    --dark: #2D1B0E; --mid: #7A4F2D;
+    --light: #FFF3E8; --shadow: rgba(45,27,14,0.12);
+  }
+  body { background: var(--cream); font-family: 'Nunito', sans-serif; min-height: 100vh; max-width: 420px; margin: 0 auto; overflow-x: hidden; }
+
+  .hero { background: linear-gradient(160deg,#FF6B35 0%,#FFB347 60%,#FFD580 100%); padding: 28px 24px 70px; position: relative; overflow: hidden; text-align: center; }
+  .hero::before { content:'🐾'; position:absolute; font-size:180px; opacity:.08; top:-20px; right:-30px; transform:rotate(-15deg); }
+  .hero::after { content:''; position:absolute; bottom:0; left:0; right:0; height:40px; background:var(--cream); border-radius:40px 40px 0 0; }
+  .hero-logo { font-size:13px; color:rgba(255,255,255,.85); font-weight:700; letter-spacing:2px; margin-bottom:20px; }
+  .hero-icon { font-size:64px; margin-bottom:12px; animation:flotar 3s ease-in-out infinite; display:block; }
+  @keyframes flotar { 0%,100%{transform:translateY(0) rotate(-2deg)} 50%{transform:translateY(-8px) rotate(2deg)} }
+  .hero h1 { font-family:'Playfair Display',serif; font-size:32px; color:white; line-height:1.1; text-shadow:0 3px 14px rgba(0,0,0,.2); position:relative; z-index:1; }
+  .hero p { font-size:14px; color:rgba(255,255,255,.9); font-weight:700; margin-top:8px; position:relative; z-index:1; }
+
+  .banner { background:var(--dark); margin:0 18px; border-radius:18px; padding:14px 18px; text-align:center; position:relative; z-index:2; margin-top:-10px; box-shadow:0 4px 16px rgba(45,27,14,.3); }
+  .banner p { font-size:13px; font-weight:900; color:var(--soft); line-height:1.5; }
+
+  .content { padding:16px 18px 40px; display:flex; flex-direction:column; gap:14px; }
+
+  .card { background:white; border-radius:20px; padding:20px; box-shadow:0 4px 20px var(--shadow); }
+  .card-title { font-size:11px; font-weight:900; letter-spacing:2px; color:var(--warm); text-transform:uppercase; margin-bottom:16px; display:flex; align-items:center; gap:6px; }
+  .card-title::after { content:''; flex:1; height:1px; background:#FFE8D6; }
+
+  .field { display:flex; flex-direction:column; gap:5px; margin-bottom:12px; }
+  .field:last-child { margin-bottom:0; }
+  .field label { font-size:11px; color:var(--mid); font-weight:700; letter-spacing:.8px; text-transform:uppercase; }
+  .field input, .field select, .field textarea { background:var(--light); border:1.5px solid #FFD0A8; color:var(--dark); font-family:'Nunito',sans-serif; font-size:15px; font-weight:600; padding:11px 14px; border-radius:12px; width:100%; outline:none; transition:border-color .2s; }
+  .field input:focus, .field select:focus, .field textarea:focus { border-color:var(--warm); }
+  .field textarea { resize:none; height:70px; }
+  .two-col { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+
+  .codigo-wrap { background:var(--dark); border-radius:16px; padding:18px; margin-bottom:4px; }
+  .codigo-wrap label { font-size:11px; color:var(--soft); font-weight:700; letter-spacing:1.5px; text-transform:uppercase; display:block; margin-bottom:8px; }
+  .codigo-wrap input { background:#3D2B1E; border:1.5px solid #5A3D28; color:var(--soft); font-family:'Nunito',sans-serif; font-size:22px; font-weight:900; letter-spacing:3px; padding:12px 16px; border-radius:12px; width:100%; outline:none; text-transform:uppercase; }
+  .codigo-hint { font-size:11px; color:#A07050; margin-top:8px; font-weight:600; }
+
+  .check-row { display:flex; align-items:center; gap:10px; padding:8px 0; border-bottom:1px solid #FFF3E8; cursor:pointer; }
+  .check-row:last-of-type { border-bottom:none; }
+  .check-row input[type="checkbox"] { width:20px; height:20px; accent-color:var(--warm); flex-shrink:0; }
+  .check-row span { font-size:14px; font-weight:700; color:var(--dark); }
+  .campo-extra { display:none; margin-top:10px; margin-bottom:4px; }
+  .campo-extra.visible { display:block; }
+  .campo-extra label { font-size:11px; color:var(--mid); font-weight:700; letter-spacing:.8px; text-transform:uppercase; display:block; margin-bottom:5px; }
+  .campo-extra input { background:var(--light); border:1.5px solid #FFD0A8; color:var(--dark); font-family:'Nunito',sans-serif; font-size:14px; font-weight:600; padding:10px 14px; border-radius:12px; width:100%; outline:none; }
+
+  .btn-enviar { background:linear-gradient(135deg,#FF6B35,#FFB347); color:white; font-family:'Nunito',sans-serif; font-size:18px; font-weight:900; padding:20px; border-radius:18px; border:none; width:100%; cursor:pointer; box-shadow:0 6px 24px rgba(255,107,53,.4); letter-spacing:1px; transition:transform .15s; display:flex; align-items:center; justify-content:center; gap:10px; }
+  .btn-enviar:active { transform:scale(.97); }
+  .btn-enviar:disabled { opacity:.6; cursor:not-allowed; }
+
+  .success-screen { display:none; text-align:center; padding:40px 24px 60px; flex-direction:column; align-items:center; gap:16px; }
+  .success-screen.show { display:flex; }
+  .success-icon { font-size:80px; animation:flotar 3s ease-in-out infinite; }
+  .success-screen h2 { font-family:'Playfair Display',serif; font-size:32px; color:var(--warm); line-height:1.1; }
+  .success-screen p { font-size:15px; color:var(--mid); font-weight:600; line-height:1.6; max-width:320px; }
+  .success-box { background:white; border-radius:18px; padding:18px 22px; box-shadow:0 4px 20px var(--shadow); width:100%; text-align:left; }
+  .success-box .label { font-size:11px; color:var(--mid); font-weight:700; letter-spacing:1px; text-transform:uppercase; margin-bottom:4px; }
+  .success-box .value { font-family:'Nunito',sans-serif; font-size:22px; font-weight:900; color:var(--dark); letter-spacing:2px; }
+  .success-badge { background:#FFF3E8; border:1.5px solid #FFD0A8; color:var(--warm); font-size:13px; font-weight:900; padding:10px 20px; border-radius:30px; }
+
+  .footer { text-align:center; padding:0 0 24px; font-size:11px; color:#C09870; font-weight:700; letter-spacing:1px; }
+  .footer span { color:var(--warm); }
 </style>
 </head>
 <body>
+
 <div class="hero">
-  <div class="hero-top"><div class="tag-logo">⭐ KID TAG MX</div><div class="hero-badge">¡AYÚDAME!</div></div>
-  <div class="avatar-wrap">
-    <div class="avatar-card"><svg class="avatar-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="38" r="22" fill="#F5C5A3"/>
-  <rect x="30" y="18" width="40" height="18" rx="10" fill="#4A90D9"/>
-  <ellipse cx="28" cy="36" rx="6" ry="10" fill="#F5C5A3"/>
-  <ellipse cx="72" cy="36" rx="6" ry="10" fill="#F5C5A3"/>
-  <circle cx="43" cy="36" r="4" fill="#4A4A4A"/>
-  <circle cx="57" cy="36" r="4" fill="#4A4A4A"/>
-  <circle cx="44" cy="35" r="1.5" fill="white"/>
-  <circle cx="58" cy="35" r="1.5" fill="white"/>
-  <ellipse cx="50" cy="44" rx="5" ry="3.5" fill="#E8A090"/>
-  <path d="M44 49 Q50 54 56 49" stroke="#4A4A4A" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-  <ellipse cx="50" cy="72" rx="20" ry="14" fill="#4A90D9"/>
-  <rect x="42" y="58" width="16" height="18" rx="4" fill="#4A90D9"/></svg></div>
-    <div class="kid-name">k5</div>
-    <div class="kid-sub">Niño · 5</div>
-  </div>
+  <div class="hero-logo">🏷️ PET TAG MX</div>
+  <span class="hero-icon">🐾</span>
+  <h1>Activa tu<br>Pet Tag</h1>
+  <p>Personaliza la placa de tu mascota en minutos</p>
 </div>
-<div class="mensaje-hero"><span>👋</span> Hola, me llamo <strong>k5</strong>.<br>¡Por favor avísale a mis papás que me encontraste!</div>
-<div class="content">
+
+<div class="banner">
+  <p>📋 Llena los datos a continuación.<br>En menos de <strong>24 horas</strong> tu placa estará lista. ✅</p>
+</div>
+
+<div class="content" id="formArea">
+
+  <!-- CÓDIGO -->
   <div class="card">
-    <div class="card-title">🚨 Contactar a mis papás</div>
-    <div class="info-row"><div class="info-icon">👤</div><div><div class="info-label">Contacto principal</div><div class="info-value">k5</div></div></div>
-    <div class="info-row"><div class="info-icon">📍</div><div><div class="info-label">Colonia / Ciudad</div><div class="info-value"></div></div></div>
-    <br>
-    <a class="btn-whatsapp" href="https://wa.me/525555555555?text=Hola%2C%20encontr%C3%A9%20a%20k5%20y%20quiero%20avisarte%20%E2%AD%90" target="_blank">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      WhatsApp al contacto 1
-    </a>
-    <a class="btn-llamar" href="tel:5555555555">📞 Llamar al contacto 1</a>
+    <div class="card-title">🏷️ Código de tu placa</div>
+    <div class="codigo-wrap">
+      <label>Código (está en el reverso de tu placa)</label>
+      <input type="text" id="fCodigo" placeholder="PT-001" maxlength="10">
+      <div class="codigo-hint">Ejemplo: PT-001, PT-002…</div>
+    </div>
   </div>
+
+  <!-- FOTO -->
   <div class="card">
-    <div class="card-title">📞 Contacto de emergencia</div>
-    <div class="info-row"><div class="info-icon">👤</div><div><div class="info-label">Segundo contacto</div><div class="info-value">k4</div></div></div>
-    <br>
-    <a class="btn-whatsapp" href="https://wa.me/525?text=Hola%2C%20encontr%C3%A9%20a%20k5%20y%20quiero%20avisarte%20%E2%AD%90" target="_blank">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      WhatsApp al contacto 2
-    </a>
-    <a class="btn-llamar2" href="tel:5">📞 Llamar al contacto 2</a>
+    <div class="card-title">📷 Foto de tu mascota</div>
+    <input type="file" id="fFoto" accept="image/jpeg,image/png" style="display:none;" onchange="previewFoto(this)">
+    <div id="fotoZona" onclick="document.getElementById('fFoto').click()" style="border:2px dashed #FFD0A8;border-radius:16px;padding:32px 16px;text-align:center;cursor:pointer;background:#FFF8F0;transition:border-color .2s;">
+      <div id="fotoContenido">
+        <div style="font-size:48px;margin-bottom:10px;">📷</div>
+        <div style="font-size:15px;font-weight:800;color:var(--warm);">Toca aquí para subir una foto</div>
+        <div style="font-size:12px;color:var(--mid);font-weight:700;margin-top:4px;">JPG o PNG · máx. 5 MB</div>
+      </div>
+      <div id="fotoPreview" style="display:none;">
+        <img id="fotoImg" src="" alt="Vista previa" style="max-width:100%;max-height:200px;border-radius:12px;border:2px solid #FFD0A8;">
+        <div style="font-size:12px;color:var(--warm);font-weight:700;margin-top:8px;">✅ Foto seleccionada · Toca para cambiar</div>
+      </div>
+    </div>
+    <div id="fotoStatus" style="font-size:12px;color:var(--mid);font-weight:700;margin-top:6px;text-align:center;"></div>
   </div>
+
+  <!-- DATOS DE LA MASCOTA -->
   <div class="card">
-    <div class="card-title">👦 Mi información</div>
-    <div class="info-row"><div class="info-icon">🎂</div><div><div class="info-label">Edad</div><div class="info-value">5</div></div></div>
-    <div class="info-row"><div class="info-icon">🏫</div><div><div class="info-label">Escuela / Kinder</div><div class="info-value"></div></div></div>
-    <div class="info-row"><div class="info-icon">🔍</div><div><div class="info-label">Señas / descripción</div><div class="info-value"></div></div></div>
+    <div class="card-title">🐾 Datos de tu mascota</div>
+    <div class="field">
+      <label>Nombre de la mascota</label>
+      <input type="text" id="fNombre" placeholder="Ej. Max, Luna, Coco…">
+    </div>
+    <div class="two-col">
+      <div class="field">
+        <label>Especie</label>
+        <select id="fEspecie">
+          <option value="Perro">Perro</option>
+          <option value="Gato">Gato</option>
+          <option value="Otro">Otro</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Edad</label>
+        <input type="text" id="fEdad" placeholder="Ej. 2 años">
+      </div>
+    </div>
+    <div class="two-col">
+      <div class="field">
+        <label>Sexo</label>
+        <select id="fSexo">
+          <option value="Macho">Macho</option>
+          <option value="Hembra">Hembra</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Castrado/a</label>
+        <select id="fCastrado">
+          <option value="No">No</option>
+          <option value="Sí">Sí</option>
+        </select>
+      </div>
+    </div>
+    <div class="field">
+      <label>Raza</label>
+      <input type="text" id="fRaza" placeholder="Ej. Labrador, Siamés, Mestizo…">
+    </div>
+    <div class="field">
+      <label>Color / Señas</label>
+      <input type="text" id="fColor" placeholder="Ej. Café con manchas blancas…">
+    </div>
+    <div class="field">
+      <label>Número de microchip (opcional)</label>
+      <input type="text" id="fChip" placeholder="Ej. 985112345678901">
+    </div>
   </div>
+
+  <!-- CONTACTO DEL DUEÑO -->
+  <div class="card">
+    <div class="card-title">🚨 Datos del dueño</div>
+    <div class="field">
+      <label>Nombre del dueño</label>
+      <input type="text" id="fDueno" placeholder="Ej. Roberto García">
+    </div>
+    <div class="field">
+      <label>WhatsApp y llamadas</label>
+      <input type="tel" id="fTel" placeholder="10 dígitos, sin espacios">
+    </div>
+    <div class="field">
+      <label>Colonia y Ciudad</label>
+      <input type="text" id="fColonia" placeholder="Ej. Narvarte, CDMX">
+    </div>
+  </div>
+
+  <!-- SALUD -->
   <div class="card">
     <div class="card-title">🏥 Información de salud</div>
-    <div class="chips"><span class="chip ok">✅ Sin condiciones especiales</span></div>
-    <div class="nota-box">Hola 👋 Si me encontraste, por favor avísale a mis papás.</div>
+
+    <div class="check-row" onclick="toggleCheck('chkVacunas')">
+      <input type="checkbox" id="chkVacunas">
+      <span>✅ Vacunas al día</span>
+    </div>
+
+    <div class="check-row" onclick="toggleCheck('chkDespa')">
+      <input type="checkbox" id="chkDespa">
+      <span>✅ Desparasitado/a</span>
+    </div>
+
+    <div class="check-row" onclick="toggleCheck('chkAlergia')">
+      <input type="checkbox" id="chkAlergia">
+      <span>⚠️ Tiene alergias</span>
+    </div>
+
+    <div class="check-row" onclick="toggleCheck('chkMed')">
+      <input type="checkbox" id="chkMed">
+      <span>💊 Toma medicamento</span>
+    </div>
+    <div class="campo-extra" id="extraMed">
+      <label>¿Cuál medicamento?</label>
+      <input type="text" id="fMedicamento" placeholder="Ej. Fenobarbital, Apoquel…">
+    </div>
+
+    <div class="field" style="margin-top:14px">
+      <label>Notas adicionales (opcional)</label>
+      <textarea id="fNota" placeholder="Ej. Es muy asustadizo, no se acerca a extraños…"></textarea>
+    </div>
   </div>
+
+  <button class="btn-enviar" id="btnEnviar" onclick="enviar()">
+    🐾 Activar mi Pet Tag
+  </button>
+
 </div>
-<div class="footer">Hecho con ❤️ por <span>KID TAG MX</span></div>
+
+<!-- ÉXITO -->
+<div class="success-screen" id="successScreen">
+  <span class="success-icon">🎉</span>
+  <h2>¡Datos<br>recibidos!</h2>
+  <p>En menos de <strong>24 horas</strong> tu Pet Tag estará listo. ¡Gracias por proteger a tu mascota! 🐾</p>
+  <div class="success-box">
+    <div class="label">Tu código de placa</div>
+    <div class="value" id="successCodigo">PT-001</div>
+  </div>
+  <div class="success-badge">✅ Solicitud enviada correctamente</div>
+</div>
+
+<div class="footer">Hecho con ❤️ por <span>PET TAG MX</span></div>
+
+<script>
+const GOOGLE_FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSeZya5-Xvp0nhVYDrzjzJ83ZXCeE0kRxPRyv9OaT3ZC0JqvtQ/formResponse";
+const IMGBB_KEY = "f1db41c660962a03ee1d6d2ad11c9a86";
+
+const ENTRY = {
+  codigo:     "entry.590460377",
+  foto:       "entry.1290538621",
+  nombre:     "entry.838185158",
+  especie:    "entry.391221323",
+  edad:       "entry.1923824941",
+  sexo:       "entry.205478447",
+  castrado:   "entry.948512479",
+  raza:       "entry.117989171",
+  color:      "entry.1077323196",
+  chip:       "entry.371963457",
+  dueno:      "entry.1215830984",
+  tel:        "entry.1455192227",
+  colonia:    "entry.1606351668",
+  vacunas:    "entry.32340388",
+  despa:      "entry.2072418073",
+  alergia:    "entry.532760867",
+  medicamento:"entry.2108658955",
+  cualMed:    "entry.1874281341",
+  nota:       "entry.603463878",
+};
+
+function previewFoto(input) {
+  if (input.files && input.files[0]) {
+    const reader = new FileReader();
+    reader.onload = e => {
+      document.getElementById('fotoImg').src = e.target.result;
+      document.getElementById('fotoContenido').style.display = 'none';
+      document.getElementById('fotoPreview').style.display = 'block';
+      document.getElementById('fotoZona').style.borderColor = '#FF6B35';
+    };
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+
+async function subirFotoImgBB() {
+  const fileInput = document.getElementById('fFoto');
+  if (!fileInput.files || !fileInput.files[0]) return '';
+  const status = document.getElementById('fotoStatus');
+  status.textContent = '📤 Subiendo foto…';
+  const formData = new FormData();
+  formData.append('image', fileInput.files[0]);
+  try {
+    const res = await fetch('https://api.imgbb.com/1/upload?key=' + IMGBB_KEY, {
+      method: 'POST',
+      body: formData
+    });
+    const data = await res.json();
+    if (data.success) {
+      status.textContent = '✅ Foto subida correctamente';
+      status.style.color = '#2E7D32';
+      return data.data.url;
+    } else {
+      status.textContent = '⚠️ No se pudo subir la foto';
+      return '';
+    }
+  } catch (e) {
+    status.textContent = '⚠️ Error al subir la foto';
+    return '';
+  }
+}
+
+function toggleCheck(id) {
+  const chk = document.getElementById(id);
+  chk.checked = !chk.checked;
+  if (id === 'chkMed') {
+    document.getElementById('extraMed').classList.toggle('visible', chk.checked);
+    if (!chk.checked) document.getElementById('fMedicamento').value = '';
+  }
+}
+
+function validar() {
+  const reqs = [
+    { id: 'fCodigo', msg: 'Escribe el código de tu placa (ej. PT-001)' },
+    { id: 'fNombre', msg: 'Escribe el nombre de tu mascota' },
+    { id: 'fDueno',  msg: 'Escribe el nombre del dueño' },
+    { id: 'fTel',    msg: 'Escribe el WhatsApp del dueño' },
+  ];
+  for (const r of reqs) {
+    const el = document.getElementById(r.id);
+    if (!el.value.trim()) {
+      el.style.borderColor = '#FF5252';
+      el.focus();
+      alert('⚠️ ' + r.msg);
+      return false;
+    }
+    el.style.borderColor = '#FFD0A8';
+  }
+  return true;
+}
+
+async function enviar() {
+  if (!validar()) return;
+
+  const btn = document.getElementById('btnEnviar');
+  btn.disabled = true;
+  btn.textContent = '⏳ Enviando…';
+
+  const fotoUrl    = await subirFotoImgBB();
+  const codigo     = document.getElementById('fCodigo').value.trim().toUpperCase();
+  const medicamento = document.getElementById('fMedicamento').value.trim();
+
+  const params = new URLSearchParams();
+  params.append(ENTRY.codigo,   codigo);
+  params.append(ENTRY.nombre,   document.getElementById('fNombre').value.trim());
+  params.append(ENTRY.especie,  document.getElementById('fEspecie').value);
+  params.append(ENTRY.edad,     document.getElementById('fEdad').value.trim());
+  params.append(ENTRY.sexo,     document.getElementById('fSexo').value);
+  params.append(ENTRY.castrado, document.getElementById('fCastrado').value);
+  params.append(ENTRY.raza,     document.getElementById('fRaza').value.trim());
+  params.append(ENTRY.color,    document.getElementById('fColor').value.trim());
+  params.append(ENTRY.chip,     document.getElementById('fChip').value.trim());
+  params.append(ENTRY.dueno,    document.getElementById('fDueno').value.trim());
+  params.append(ENTRY.tel,      document.getElementById('fTel').value.trim());
+  params.append(ENTRY.colonia,  document.getElementById('fColonia').value.trim());
+  params.append(ENTRY.nota,     document.getElementById('fNota').value.trim());
+
+  if (document.getElementById('chkVacunas').checked) params.append(ENTRY.vacunas, 'sí');
+  if (document.getElementById('chkDespa').checked)   params.append(ENTRY.despa, 'sí');
+  if (document.getElementById('chkAlergia').checked) params.append(ENTRY.alergia, 'sí');
+  if (document.getElementById('chkMed').checked)     params.append(ENTRY.medicamento, 'sí');
+  params.append(ENTRY.cualMed, medicamento);
+  if (fotoUrl) params.append(ENTRY.foto, fotoUrl);
+
+  fetch(GOOGLE_FORM_ACTION, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: params.toString()
+  });
+
+  document.getElementById('successCodigo').textContent = codigo;
+  document.getElementById('formArea').style.display = 'none';
+  document.getElementById('successScreen').classList.add('show');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
 </body>
 </html>
